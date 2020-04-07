@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "printk(\"Cixi.Geng--->Debug: %s %s %d\\\n\", __FILE__, __FUNCTION__, __LINE__);"

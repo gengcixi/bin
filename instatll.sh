@@ -1,0 +1,96 @@
+#########################################################################
+# File Name: instatll.sh
+# Author: Cixi.Geng
+# mail: cixi.geng@unisoc.com
+# Created Time: 2020年01月09日 星期四 18时38分25秒
+#########################################################################
+#!/bin/bash
+
+sudo apt-get install -y repo
+sudo apt-get install -y git-core
+sudo apt-get install -y gitk
+sudo apt-get install -y git-gui
+sudo apt-get install -y gcc-arm-linux-gnueabihf
+sudo apt-get install -y u-boot-tools
+sudo apt-get install -y device-tree-compiler
+sudo apt-get install -y gcc-aarch64-linux-gnu
+sudo apt-get install -y mtools
+sudo apt-get install -y parted
+sudo apt-get install -y libudev-dev
+sudo apt-get install -y libusb-1.0-0-dev
+sudo apt-get install -y python-linaro-image-tools
+sudo apt-get install -y linaro-image-tools
+sudo apt-get install -y autoconf
+sudo apt-get install -y autotools-dev
+sudo apt-get install -y libsigsegv2
+sudo apt-get install -y m4
+sudo apt-get install -y intltool
+sudo apt-get install -y libdrm-dev
+sudo apt-get install -y curl
+sudo apt-get install -y sed
+sudo apt-get install -y make
+sudo apt-get install -y binutils
+sudo apt-get install -y build-essential
+sudo apt-get install -y gcc
+sudo apt-get install -y g++
+sudo apt-get install -y bash
+sudo apt-get install -y patch
+sudo apt-get install -y gzip
+sudo apt-get install -y bzip2
+sudo apt-get install -y perl
+sudo apt-get install -y tar
+sudo apt-get install -y cpio
+sudo apt-get install -y python
+sudo apt-get install -y unzip
+sudo apt-get install -y rsync
+sudo apt-get install -y file
+sudo apt-get install -y bc
+sudo apt-get install -y wget
+sudo apt-get install -y libncurses5
+sudo apt-get install -y libqt4-dev
+sudo apt-get install -y libglib2.0-dev
+sudo apt-get install -y libgtk2.0-dev
+sudo apt-get install -y libglade2-dev
+sudo apt-get install -y cvs
+sudo apt-get install -y git
+sudo apt-get install -y mercurial
+sudo apt-get install -y rsync
+sudo apt-get install -y openssh-client
+sudo apt-get install -y subversion
+sudo apt-get install -y asciidoc
+sudo apt-get install -y w3m
+sudo apt-get install -y dblatex
+sudo apt-get install -y graphviz
+sudo apt-get install -y python-matplotlib
+sudo apt-get install -y libc6:i386
+sudo apt-get install -y libssl-dev
+sudo apt-get install -y texinfo
+sudo apt-get install -y liblz4-tool
+sudo apt-get install -y genext2fs
+sudo apt-get install -y lib32stdc++6
+sudo apt-get install -y git-core
+sudo apt-get install -y gnupg
+sudo apt-get install -y flex
+sudo apt-get install -y bison
+sudo apt-get install -y gperf
+sudo apt-get install -y libsdl1.2-dev
+sudo apt-get install -y libesd0-dev
+sudo apt-get install -y libwxgtk2.8-dev
+sudo apt-get install -y squashfs-tools
+sudo apt-get install -y zip
+sudo apt-get install -y libncurses5-dev
+sudo apt-get install -y zlib1g-dev
+sudo apt-get install -y pngcrush
+sudo apt-get install -y schedtool
+sudo apt-get install -y libxml2
+sudo apt-get install -y libxml2-utils
+sudo apt-get install -y xsltproc
+sudo apt-get install -y lzop
+sudo apt-get install -y libc6-dev
+sudo apt-get install -y g++-multilib
+sudo apt-get install -y lib32z1-dev
+sudo apt-get install -y lib32ncurses5-dev
+sudo apt-get install -y lib32readline-gplv2-dev
+sudo apt-get install -y gcc-multilib
+sudo apt-get install -y libswitch-perl
+sudo apt-get install -y libssl1.0.0

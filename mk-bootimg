@@ -1,0 +1,21 @@
+#!/bin/bash
+
+TOPDIR=$(dirname `readlink -f $0`)
+OUT=${TOPDIR}/output
+if [ ! -d ${OUT} ];then
+	mkdir ${OUT}
+fi
+
+BIN=${TOPDIR}/bin
+KERNEL=/home/cixi.geng1/server/bsp_kernel/out/s9863a_debian/obj/kernel
+ARCH=arm64
+#RAMDISK=${TOPDIR}/rootfs-arm64/
+
+echo "making dt.img"
+$BIN/dtbTool -o dt.img -s 4K -p $KERNEL/scripts/dtc/ $KERNEL/arch/$ARCH/boot/dts/sprd/
+
+echo "making ramdisk.img"
+#find $RAMDISK | cpio -H newc -o | $BIN/minigzip > ramdisk.img
+
+echo "making boot.img"
+$BIN/mkbootimg  --kernel $KERNEL/arch/$ARCH/boot/Image  --ramdisk ${BIN}/ramdisk.img  --base 0x00000000 --dt dt.img --output boot.img
