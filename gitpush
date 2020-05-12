@@ -1,9 +1,9 @@
 #!/bin/sh
 
 PROJECTNAME=`git config --list |grep projectname|awk -F"=" '{print$NF}'`
-#if [-e $PROJECTNAME ];then
-#	PROJECTNAME=`git config --list |grep remote.origin.url |awk -F "unisoc.com/" '{print$NF}'`
-#fi
+if [ -z "$PROJECTNAME" ];then
+	PROJECTNAME=`git config --list |grep remote.origin.url |awk -F ".com/" '{print$NF}'`
+fi
 BRANCH=`git branch -r |grep "\->" |awk -F"/" '{print$NF}'`
 echo projectname=$PROJECTNAME
 echo remote branch=$BRANCH

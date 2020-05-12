@@ -1,0 +1,2 @@
+#!/bin/sh
+./external/selinux/prebuilts/bin/audit2allow -i $1 >avc.te
