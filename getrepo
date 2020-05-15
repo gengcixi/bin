@@ -5,6 +5,9 @@
 # Created Time: Tue May 12 14:44:40 2020
 #########################################################################
 #!/bin/bash
+
+TOPDIR=`pwd`
+
 echo_info()
 {
 	echo -e "\033[32m $* \033[0m"
@@ -25,19 +28,18 @@ export -f check_err
 
 get_repo()
 {
-
-	if [ -d $1 ];then
+	if [ -d "${TOPDIR}/$1" ];then
 		echo the $1 directory has exist!
 		return 1
+	else
+		mkdir $1
+		cd $1
+		repo init -u ssh://gitadmin@gitmirror.spreadtrum.com/platform/manifest -b $1
+		repo sync -cdqf -j20
+		check_err "repo sync"
+		if [ ${return_val} -eq 1 ];then
+			echo repo sync failed
+		fi
 	fi
-	mkdir $1
-	cd $1
-	repo init -u ssh://gitadmin@gitmirror.spreadtrum.com/platform/manifest -b $1
-	repo sync -cdqf -j20
-	check_err "repo sync"
-	if [ return_val ==1 ];then
-		echo repo sync failed
-	fi
-
 }
-get_repo
+get_repo $1
