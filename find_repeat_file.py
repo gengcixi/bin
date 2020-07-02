@@ -15,6 +15,20 @@ def get_ms5(filename):
     md5_value = m.hexdigest()
     return md5_value
 
+#遍历filepath下所有文件，包括子目录
+def find_all_file(filepath):
+    files = os.listdir(filepath)
+    for fi in files:
+        fi_d = os.path.join(filepath,fi)
+        if os.path.isdir(fi_d):
+            find_all_file(fi_d)
+        else:
+            file=os.path.join(filepath,fi_d)
+            filelist.append(file)
+            print(file)
+        return filelist
+filelist=find_all_file(path)
+
 # get file lists
 def get_urllist(base):
     list = os.listdir(base)
