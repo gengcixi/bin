@@ -1,0 +1,2 @@
+#!/bin/sh
+python systrace.py am wm sched freq idle disk pagecache input -t 8 -o $1.html
