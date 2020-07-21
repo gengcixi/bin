@@ -2,5 +2,5 @@
 
 while true 
 do
-    adb shell dmesg |grep cixi >> log.txt
+	adb shell dmesg |grep cixi >> log.txt
 done

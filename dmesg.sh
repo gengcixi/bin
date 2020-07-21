@@ -2,5 +2,5 @@
 
 while true 
 do
-    dmesg -n 1
+	dmesg -n 1
 done

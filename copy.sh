@@ -3,14 +3,14 @@
 # check return error
 check_err()
 {
-        if [ $? -ne 0 ]; then
-                echo "\033[31m FAIL: $* \033[0m" >&2
-                return_val=1
-                return
-        else
-                echo "\033[33m PASS: $* \033[0m" >&2
-                return_val=0
-        fi
+	if [ $? -ne 0 ]; then
+		echo "\033[31m FAIL: $* \033[0m" >&2
+		return_val=1
+		return
+	else
+		echo "\033[33m PASS: $* \033[0m" >&2
+		return_val=0
+	fi
 }
 
 if [ -d /media/cixi.geng1/debian ];then

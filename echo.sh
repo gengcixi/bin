@@ -29,8 +29,8 @@ echo -e "\033[47;34m 白底蓝字 \033[0m"
 # check return error
 check_err()
 {
-		echo -e "\033[31m Error: $* \033[0m" >&2
-		exit 2
+	echo -e "\033[31m Error: $* \033[0m" >&2
+	exit 2
 }
 
 check_err "this is a test file"
@@ -39,14 +39,14 @@ echo "et wpp wps wpspdf"
 # check return error
 check_err()
 {
-        if [ $? -ne 0 ]; then
-                echo -e "\033[31m FAIL: $* \033[0m" >&2
-                return_val=1
-                return
-        else
-                echo -e "\033[33m PASS: $* \033[0m" >&2
-                return_val=0
-        fi
+	if [ $? -ne 0 ]; then
+		echo -e "\033[31m FAIL: $* \033[0m" >&2
+		return_val=1
+		return
+	else
+		echo -e "\033[33m PASS: $* \033[0m" >&2
+		return_val=0
+	fi
 }
 #install
 if [ ${return_val} -eq 0 ]; then

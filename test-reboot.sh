@@ -1,8 +1,8 @@
 #! /bin/sh
 start()
 {
-    sleep 30
-    reboot -f
+	sleep 30
+	reboot -f
 }
 stop()
 {
