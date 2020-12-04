@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# Copyright (C) 2018 UNISOC Communications Inc.
+#
+BASE=$(dirname `readlink -f $0`)
+export LD_LIBRARY_PATH=${BASE}/android-8.1/lib:$LD_LIBRARY_PATH
+${BASE}/make_ext4fs.android $@
