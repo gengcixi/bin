@@ -22,14 +22,16 @@ function logcmd()
 	echo -n "$@"
 	echo -n " on "
 	date '+%m-%d %T'
+	return startTime_s=`date+%s`
 }
 
 function exe_cmd()
 {
-	logcmd "$@";
+	startTime_s=logcmd "$@";
 	eval $@;
 	echo -n "run finished on "
 	date '+%m-%d %T'
+	endTime_s=`date+%s`
 }
 
 exe_cmd "cat /proc/meminfo"
