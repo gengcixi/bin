@@ -40,6 +40,7 @@ get_repo()
 		if [ ${return_val} -eq 1 ];then
 			echo repo sync failed
 		fi
+		repo start local --all
 	fi
 }
 get_repo $1
