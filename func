@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 get_topdir()
@@ -43,12 +44,41 @@ echo_info()
 #check functions return
 exec_check()
 {
-	status=$?
-	if [[ $status -eq 0 ]];then
+	return_val=$?
+	if [[ $return_val -eq 0 ]];then
 		echo_pass $*
 	else
 		echo_fail $*
 	fi
 	croot
-	return $status
+	return $return_val
 }
+
+exec_cmd()
+{
+	local startTime_s=`date '+%s'`
+	local startTime=`date '+%m-%d %T'`
+	echo_info "<<< $@ starting on $startTime>>>"
+	eval $@
+	exec_check "$@"
+	local endTime_s=`date '+%s'`
+	local endTime=`date '+%m-%d %T'`
+	echo_info "<<< $@ finished on $endTime>>>"
+	local sumTime=$[ $endTime_s - $startTime_s ]
+	echo_info "<<< $@ takes $sumTime seconds>>>"
+	return $return_val
+}
+
+check_cmd_exist()
+{
+	command -v $1 >/dev/null 2>&1
+}
+
+get_git_src()
+{
+	while [ ! -d $1 ]
+	do
+		git clone $2
+	done
+}
+
