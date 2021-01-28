@@ -38,6 +38,9 @@ gcov
 gcov-dump
 gcov-tool
 "
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+
+sudo apt-get update
 
 install_cross_tools()
 {
