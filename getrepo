@@ -34,7 +34,7 @@ get_repo()
 	else
 		mkdir $1
 		cd $1
-		repo init -u ssh://gitadmin@gitmirror.spreadtrum.com/platform/manifest -b $1
+		repo init -u ssh://gitadmin@gitmirror.spreadtrum.com/platform/manifest -b $1 -c --no-tags
 		repo sync -cdqf -j20
 		check_err "repo sync"
 		if [ ${return_val} -eq 1 ];then
