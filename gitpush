@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo "update .git/hooks/commit-msg"
+
+gitdir=$(git rev-parse --git-dir); scp -p -P 29418 cixi.geng1@review.source.spreadtrum.com:hooks/commit-msg ${gitdir}/hooks/
+
 PROJECTNAME=`git config --list |grep projectname|awk -F"=" '{print$NF}'`
 if [ -z "$PROJECTNAME" ];then
 	PROJECTNAME=`git config --list |grep remote.origin.url |awk -F ".com/" '{print$NF}'`
