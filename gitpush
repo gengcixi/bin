@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "hooks info"
+echo "gitdir=\$(git rev-parse --git-dir); scp -p -P 29418 cixi.geng1@review.source.spreadtrum.com:hooks/commit-msg \${gitdir}/hooks/"
+
 PROJECTNAME=`git config --list |grep projectname|awk -F"=" '{print$NF}'`
 if [ -z "$PROJECTNAME" ];then
 	PROJECTNAME=`git config --list |grep remote.origin.url |awk -F ".com/" '{print$NF}'`
@@ -10,7 +13,3 @@ echo remote branch=$BRANCH
 echo "git push ssh://cixi.geng1@review.source.spreadtrum.com:29418/$PROJECTNAME HEAD:refs/for/$BRANCH"
 git push ssh://cixi.geng1@review.source.spreadtrum.com:29418/$PROJECTNAME HEAD:refs/for/$BRANCH
 
-if [[ $? ne 0 ]];then
-	echo "update .git/hooks/commit-msg"
-	gitdir=$(git rev-parse --git-dir); scp -p -P 29418 cixi.geng1@review.source.spreadtrum.com:hooks/commit-msg ${gitdir}/hooks/
-fi
