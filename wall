@@ -1,0 +1,6 @@
+#sudo  rdesktop -u spreadtrum\\cixi.geng1 -p 1213.Geng -g 1440*1280 -a  16 hkwts01
+#sudo  rdesktop -u spreadtrum\\cixi.geng1 -p 1213.Geng -f -a 64 hkwts01
+sudo  rdesktop -u spreadtrum\\cixi.geng1 -p 1213.Geng -r clipboard:PRIMARYCLIPBOARD -r disk:MyDisk=$HOME/Public -x lan -g workarea -a 24 hkwts01
+#10.0.64.15
+#10.0.64.19
+#10.0.64.20
